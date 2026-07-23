@@ -2,6 +2,7 @@
 
 A production-grade **C++17** data-ingestion engine that converts large CSV files into compressed **Apache Parquet**, using OS-level memory mapping and lock-free parallelism to eliminate heap-allocation and thread-contention overhead.
 
+![CI](https://github.com/ldocs17/CSVtoParquetEngine/actions/workflows/ci.yml/badge.svg)
 ![Language](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus)
 ![Apache Arrow](https://img.shields.io/badge/Apache%20Arrow-Parquet-e6526f)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -106,7 +107,8 @@ cmake --build build -j
 - [ ] Schema inference beyond the initial sample (type promotion across chunks)
 - [ ] Configurable Parquet compression codec (Snappy / ZSTD) and row-group size
 - [ ] Streaming write for datasets larger than RAM
-- [ ] GitHub Actions CI (build + smoke test)
+- [x] GitHub Actions CI (build on every push/PR)
+- [ ] CI smoke test (run the binary against a tiny fixture CSV)
 - [ ] Unit tests over malformed rows / quoted fields / embedded newlines
 
 ---
